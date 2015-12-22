@@ -1,0 +1,91 @@
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: #333;
+$information-tablet: "only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1)";
+$information-laptop: "screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1)";
+$information-desktop: "screen and (min-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1)";
+
+body {
+    font: 300% $font-stack;
+    color: $primary-color;
+    text-align: center;
+    background-color: #EEEEEE;
+    @media #{$information-tablet}{
+        font-size: 200%;
+    }
+    @media #{$information-laptop}{
+        font-size: 100%;
+    }
+    @media #{$information-desktop}{
+        font-size: 100%;
+    }
+}
+
+.container {}
+
+a {
+    color: $primary-color;
+}
+
+nav {
+    a {
+        text-decoration: none;
+    }
+    ul {
+        background-color: #919BA1;
+        margin: 20px;
+        border-radius: 10px;
+        padding: 20px;
+        li {
+            list-style-type: none;
+            input[type="radio"] {
+                opacity: 0;
+                width: 0px;
+                height: 0px;
+                z-index: 1;
+            }
+            input[type="radio"]:checked + span {
+                -webkit-box-shadow: 0px 0px 131px 2px rgba(232, 242, 175, 0.68);
+                -moz-box-shadow: 0px 0px 131px 2px rgba(232, 242, 175, 0.68);
+                box-shadow: 0px 0px 131px 2px rgba(232, 242, 175, 0.68);
+                background-color: rgba(232, 242, 175, 0.28);
+                border-radius: 43px;
+            }
+            input[type="radio"]:checked + label {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+#menu-algorythm {
+    ul {
+        li {
+            display: inline-block;
+            input[type="radio"] {
+                opacity: 0;
+                width: 100px;
+                height: 100px;
+                z-index: 1;
+            }
+            input[type="radio"]:hover{
+                cursor:pointer;
+            }
+        }
+    }
+}
+
+.btn {
+    padding: 20px 160px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255,183,52,0.55);
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.square-bar {
+    display: none;
+}
