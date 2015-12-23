@@ -62,7 +62,7 @@ var moduleRod = (function() {
             return this.diameter;
         },
         me.getDeformation = function() {
-            def = (me.force * Math.pow(me.lenght, 3)) / me.young * me.equasion();
+            def = (me.force * Math.pow(me.lenght, 3)) / 3*me.young * me.equasion();
             return def;
         }
         
@@ -98,10 +98,6 @@ var moduleSquare = (function() {
             this.height = first_argument
         };
 
-        me.getDeformation = function() {
-            def = (me.force * Math.pow(me.lenght, 3)) / me.young * me.equasion();
-            return def;
-        }
         return me;
     };
 

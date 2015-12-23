@@ -54,21 +54,25 @@ var rodProp = (function() {
 
     rodProp.prototype.getSubValue = function() {
         return this.subproperty;
-    };
+    }
 
     rodProp.prototype.setDiameter = function(first_argument) {
         this.diameter = first_argument
-    };
+    }
 
     rodProp.prototype.getDiameter = function() {
         return this.lenght;
-    };
+    }
+
+    rodProp.prototype.equation = function(){
+        return (3.14 / 64) * Math.pow(this.diameter, 4);
+    }
 
     rodProp.prototype.getDeformation = function() {
-        console.log(this.force + " * " + Math.pow(this.lenght, 3) + " / " + this.young + " * " + Math.pow(this.diameter, 4));
-        def = (this.force * Math.pow(this.lenght, 3)) / this.young * (3.14 / 64) * Math.pow(this.diameter, 4);
+        console.log(this.force + " * " + Math.pow(this.lenght, 3) + " / 3*" + this.young + " 3,14/64* " + Math.pow(this.diameter, 4));
+        def = (this.force * Math.pow(this.lenght, 3)) / (3*this.young * this.equation());
         return def;
-    };
+    }
 
     return rodProp;
 }());
@@ -92,12 +96,11 @@ var rodSquare = (function() {
     rodSquare.prototype.setHeight = function(first_argument) {
         this.height = first_argument
     };
+    rodSquare.prototype.equation = function(){
+        console.log("this was called");
+        return ((this.diameter * Math.pow(this.height, 3)) / 12);
+    }
 
-    rodSquare.prototype.getDeformation = function() {
-        console.log(this.force + " * " + Math.pow(this.lenght, 3) + " / " + this.young + " * " + Math.pow(this.diameter, 4));
-        def = (this.force * Math.pow(this.lenght, 3)) / this.young * ((this.diameter * Math.pow(this.height, 3)) / 12);
-        return def;
-    };
 
     return rodSquare;
 }());

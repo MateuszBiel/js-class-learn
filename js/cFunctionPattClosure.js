@@ -68,7 +68,7 @@ var cClousureBar = function() {
                 return diameter;
             },
             getDeformation: function() {
-                def = (me.getForce() * Math.pow(me.getLenght(), 3)) / me.getYoung() * me.equasion();
+                def = (me.getForce() * Math.pow(me.getLenght(), 3)) / 3*me.getYoung() * me.equasion();
                 return def;
             }
         });
