@@ -1,7 +1,7 @@
 .doubleT, .point, .rect{
 	background: url(../img/sprites.png) no-repeat;
 	display:block;
-	margin-top: -100px;
+
 }
 
 .doubleT{

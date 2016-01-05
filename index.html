@@ -29,18 +29,18 @@
                 </form>
                 <form action="" name="menu-algorythm" id="menu-algorythm" type="menu">
                     <ul>
-                        <li><input type="radio"  name="figure" value="point"><span class="point"></span></li>
-                        <li><input type="radio"  name="figure" value="rect"><span class="rect"></span></li>
-                        <li><input type="radio"  name="figure" value="doubleT"><span class="doubleT"></span></li>
+                        <li><input type="radio" name="figure" value="point" id="point"><label for="point"  class="point"></label></li>
+                        <li><input type="radio"  name="figure" value="rect" id="rect"><label for="rect" class="rect"></label></li>
+                        <li><input type="radio"  name="figure" value="doubleT" id="doubleT"><label for="doubleT" class="doubleT"></label></li>
                     </ul>   
                 </form>
             </nav>
             
             <div class="calculate-area">
-                <h1>round bar</h1>
+                <h1><span id="current-set">round bar</span> </h1>
                 <form id="values" action="javascript:void(0)">
                     <p>lenght of bar: <input name="lenght" type="number"> [m] </p>
-                    <p class="square-bar T-bar">height of square bar: <input name="height" type="number"> [m] </p>
+                    <p class="square-bar T-bar" id="t-bar-heigths">height of square bar: <input name="height" type="number"> [m] </p>
                     <p class="T-bar">height of small square bar: <input name="heightS" type="number"> [m] </p>
                     <p class="diameter-word" >diameter of bar: <input name="diameter" type="number"> [m] </p>
                     <p class="T-bar diameter-word">diameter of small bar: <input name="diameterS" type="number"> [m] </p>
@@ -54,12 +54,12 @@
             </div>
    
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    
     <script src="js/cPrototypePatt.js"></script>
     <script src="js/cFunctionPatt.js"></script>
     <script src="js/cFunctionPattClosure.js"></script>
     <script src="js/cDocoratePattern.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -7,41 +7,44 @@ var modulePoint = (function() {
 
         me.checkParent = function() {
             console.log('parent');
-        }
-        
-        me.getFunctionName=function(){
+        };
+
+        me.getFunctionName = function() {
             console.log("functional pattern");
-        }
-        
-        me.getName=function(){
+        };
+
+        me.getName = function() {
             console.log("functional pattern");
-        }
+        };
 
         me.getLenght = function() {
             return this.subproperty;
-        }
+        };
 
-        me.setLenght = function(first_argument) {
-            this.lenght = first_argument
-        }
+        me.setLenght = function(firstArgument) {
+            this.lenght = firstArgument;
+        };
 
         me.getForce = function() {
             return this.force;
-        }
+        };
 
-        me.setForce = function(first_argument) {
-            this.force = first_argument
-        }
+        me.setForce = function(firstArgument) {
+            this.force = firstArgument;
+        };
 
         me.getYoung = function() {
             return this.young;
-        }
+        };
 
-        me.setYoung = function(first_argument) {
-            this.young = first_argument
-        }
+        me.setYoung = function(firstArgument) {
+            this.young = firstArgument;
+        };
 
         return me;
+    };
+    modulePoint.prototype.test = function() {
+        alert();
     };
     return modulePoint;
 }());
@@ -52,20 +55,20 @@ var moduleRod = (function() {
 
         me.diameter = 1;
         me.equasion = function() {
-            return (3.14 / 64) * Math.pow(me.diameter, 4)
+            return (3.14 / 64) * Math.pow(me.diameter, 4);
         };
 
         me.setDiameter = function(first_argument) {
-            this.diameter = first_argument
-        },
+            this.diameter = first_argument;
+        };
         me.getDiameter = function() {
             return this.diameter;
-        },
+        };
         me.getDeformation = function() {
-            def = (me.force * Math.pow(me.lenght, 3)) / me.young * me.equasion();
+            def = (me.force * Math.pow(me.lenght, 3)) / 3 * me.young * me.equasion();
             return def;
-        }
-        
+        };
+
 
 
 
@@ -78,33 +81,28 @@ var moduleRod = (function() {
 var moduleSquare = (function() {
     var moduleSquare = function() {
         var me = moduleRod();
-        me.height =0;
+        me.height = 0;
 
         me.equasion = function() {
             return ((this.diameter * Math.pow(this.height, 3)) / 12);
         };
 
         me.setDiameter = function(first_argument) {
-            this.diameter = first_argument
-        },
+            this.diameter = first_argument;
+        };
         me.getDiameter = function() {
             return this.diameter;
-        },
+        };
         me.getHeight = function() {
             return this.height;
         };
 
         me.setHeight = function(first_argument) {
-            this.height = first_argument
+            this.height = first_argument;
         };
 
-        me.getDeformation = function() {
-            def = (me.force * Math.pow(me.lenght, 3)) / me.young * me.equasion();
-            return def;
-        }
         return me;
     };
 
     return moduleSquare;
 }());
-

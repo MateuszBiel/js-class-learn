@@ -37,10 +37,10 @@ var cClousurePoint = function() {
             getYoung: function() {
                 return young;
             },
-            getClousureName:function(){
+            getClousureName: function() {
                 console.log("Clousure pattern");
             },
-            getName:function(){
+            getName: function() {
                 console.log("Clousure pattern");
             }
         });
@@ -59,10 +59,10 @@ var cClousureBar = function() {
     function publicAPI() {
         extend(me, {
             equasion: function() {
-                return (3.14 / 64) * Math.pow(diameter, 4)
+                return (3.14 / 64) * Math.pow(diameter, 4);
             },
             setDiameter: function(first_argument) {
-                diameter = first_argument
+                diameter = first_argument;
             },
             getDiameter: function() {
                 return diameter;
@@ -89,11 +89,11 @@ var cClousureSquare = function() {
             equasion: function() {
                 return ((me.getDiameter() * Math.pow(me.getHeight(), 3)) / 12);
             },
-            getHeight : function() {
+            getHeight: function() {
                 return height;
             },
-            setHeight : function(first_argument) {
-                height = first_argument
+            setHeight: function(first_argument) {
+                height = first_argument;
             }
         });
     }

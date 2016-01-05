@@ -1,4 +1,7 @@
-function decorate (classs, heightSmall, widthSmall) {
+
+
+var Decorate = (function() {
+    var decorate = function(classs, heightSmall, widthSmall) {
     this.classs = classs;
     this.heightSmall =heightSmall;
     this.widthSmall = widthSmall;
@@ -9,3 +12,6 @@ function decorate (classs, heightSmall, widthSmall) {
         return def;
     };
 }
+
+    return decorate;
+}());

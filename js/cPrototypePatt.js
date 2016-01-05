@@ -5,41 +5,41 @@ var pointProt = (function() {
         this.force = 2;
         this.young = 205;
     }
-    
+
     pointProt.prototype.getYoung = function() {
         return this.young;
-    }
+    };
 
     pointProt.prototype.setYoung = function(first_argument) {
-        this.young = young
-    }
+        this.young = young;
+    };
     pointProt.prototype.getLenght = function() {
         return this.lenght;
-    }
+    };
 
     pointProt.prototype.setLenght = function(first_argument) {
-        this.lenght = first_argument
-    }
+        this.lenght = first_argument;
+    };
 
     pointProt.prototype.getForce = function() {
         return this.force;
-    }
+    };
 
     pointProt.prototype.setForce = function(first_argument) {
-        this.force = first_argument
-    }
+        this.force = first_argument;
+    };
 
     pointProt.prototype.getSuperValue = function() {
         return this.property;
-    }
+    };
 
-    pointProt.prototype.getPrototypeName=function(){
+    pointProt.prototype.getPrototypeName = function() {
         console.log("prototype");
-    }
+    };
 
-    pointProt.prototype.getName=function(){
+    pointProt.prototype.getName = function() {
         console.log("prototype");
-    }
+    };
 
     return pointProt;
 }());
@@ -57,7 +57,7 @@ var rodProp = (function() {
     };
 
     rodProp.prototype.setDiameter = function(first_argument) {
-        this.diameter = first_argument
+        this.diameter = first_argument;
     };
 
     rodProp.prototype.getDiameter = function() {
@@ -90,7 +90,7 @@ var rodSquare = (function() {
     };
 
     rodSquare.prototype.setHeight = function(first_argument) {
-        this.height = first_argument
+        this.height = first_argument;
     };
 
     rodSquare.prototype.getDeformation = function() {

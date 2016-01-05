@@ -10,14 +10,12 @@ $information-desktop: "screen and (min-device-width: 1600px) ";
 
 body {
     overflow-x: hidden;
-
     font: 200% $font-stack;
     color: $primary-color;
     background-color: #EEEEEE;
 }
 
 .main-container {
-    
     margin: auto;
     text-align: center;
 }
@@ -45,10 +43,7 @@ nav {
         li {
             list-style-type: none;
             input[type="radio"] {
-                opacity: 0;
-                width: 0px;
-                height: 0px;
-                z-index: 1;
+                display: none;
             }
             input[type="radio"]:checked + span {
                 -webkit-box-shadow: 0px 0px 131px 2px rgba(232, 242, 175, 0.68);
@@ -70,13 +65,14 @@ nav {
             width: 100px;
             margin: 0 auto;
             input[type="radio"] {
-                opacity: 0;
-                width: 100px;
-                height: 100px;
-                z-index: 1;
+                visibility: hidden;
             }
-            input[type="radio"]:hover {
-                cursor: pointer;
+            input[type=radio]:checked + label:before {
+                -webkit-box-shadow: 0px 0px 131px 2px rgba(232, 242, 175, 0.68);
+                -moz-box-shadow: 0px 0px 131px 2px rgba(232, 242, 175, 0.68);
+                box-shadow: 0px 0px 131px 2px rgba(232, 242, 175, 0.68);
+                background-color: rgba(232, 242, 175, 0.28);
+                font-weight: bold;
             }
         }
     }
@@ -124,8 +120,8 @@ input {
 }
 
 @media #{$information-laptop} {
-    #menu-algorythm ul li{
-        display:inline-block;
+    #menu-algorythm ul li {
+        display: inline-block;
     }
     .main-container {
         max-width: 960px;
@@ -134,8 +130,8 @@ input {
 }
 
 @media #{$information-desktop} {
-    #menu-algorythm ul li{
-        display:inline-block;
+    #menu-algorythm ul li {
+        display: inline-block;
     }
     .main-container {
         max-width: 1200px;
