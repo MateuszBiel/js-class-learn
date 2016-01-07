@@ -1,0 +1,36 @@
+{
+  "name": "js-class-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-cssnano": "^2.1.0",
+    "jshint": "^2.8.0",
+    "normalize.css": "^3.0.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.1",
+    "normalize.css": "^3.0.3",
+    "sassdoc": "^2.1.19"
+  },
+  "scripts": {
+    "start": "gulp default ",
+    "restart": "index.html",
+    "build-css": "node-sass --include-path scss scss/main.scss css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niepelny/js-class-learn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Niepelny/js-class-learn/issues"
+  },
+  "homepage": "https://github.com/Niepelny/js-class-learn#readme"
+}

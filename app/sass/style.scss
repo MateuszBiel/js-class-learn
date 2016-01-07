@@ -1,0 +1,149 @@
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: #333;
+// colors
+$primary-background-color: #EEEEEE;
+$figure-picker-form-color: #919ba1;
+$hightlight-figure-color: 0px 0px 131px 2px rgba(232, 242, 175, 0.68);
+$hightlight-boxshadow-color: rgba(232, 242, 175, 0.28);
+$btn-color: rgba(255, 183, 52, 0.55);
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font: 200% $font-stack;
+    color: $primary-color;
+    background-color: $primary-background-color;
+}
+
+.main-container {
+    margin: auto;
+    text-align: center;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+#figure-picker-form {
+    background-color: $figure-picker-form-color;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    li {
+        list-style-type: none;
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"]:checked + span {
+            box-shadow: $hightlight-figure-color;
+            background-color: $hightlight-boxshadow-color;
+            border-radius: 43px;
+        }
+        input[type="radio"]:checked + label {
+            font-weight: bold;
+        }
+    }
+}
+
+#menu-algorythm {
+    li {
+        width: 100px;
+        margin: 0 auto;
+        input[type="radio"] {
+            visibility: hidden;
+        }
+        input[type=radio]:checked + label {
+            box-shadow: $hightlight-figure-color;
+            background-color: $hightlight-boxshadow-color;
+        }
+        & + label:before {
+            font-weight: bold;
+        }
+    }
+}
+
+.btn {
+    padding: 20px 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: $btn-color;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.square-bar {
+    display: none;
+}
+
+.T-bar {
+    display: none;
+}
+
+input {
+    width: 100%;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    body {
+        font-size: 200%;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    body {
+        font-size: 100%;
+    }
+    #menu-algorythm li {
+        display: inline-block;
+    }
+    .main-container {
+        max-width: 960px;
+        margin: auto;
+    }
+}
+
+@media screen and (min-device-width: 1600px) {
+    body {
+        font-size: 100%;
+    }
+    #menu-algorythm ul li {
+        display: inline-block;
+    }
+    .main-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+    input {
+        width: 200px;
+    }
+}
+
+.doubleT, .point, .rect{
+    background: url(../img/sprites.png) no-repeat;
+    display:block;
+}
+
+.doubleT{
+    background-position: -187px 0;
+    width: 100px;
+    height: 100px;
+}
+
+.point{
+    background-position: 0 0;
+    width: 100px;
+    height: 100px;
+}
+
+.rect{
+    background-position: -101px 0;
+    width: 93px;
+    height: 100px;
+}
+
