@@ -21,3 +21,5 @@ bower_components/
 
 # coverage
 lib-cov/
+
+app/css/

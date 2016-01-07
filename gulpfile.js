@@ -1,14 +1,30 @@
-'use strict';
+"use strict";
  
 var gulp = require('gulp');
 var sass = require('gulp-sass');
- 
-gulp.task('sass', function () {
-  gulp.src('./sass/*.scss')
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+var prefix = require('gulp-autoprefixer');
+var minify = require('gulp-minify-css');
+
+var browserSync = require('browser-sync').create();
+
+gulp.task('serve', ['sass3'], function() {
+
+    browserSync.init({
+        server: ""
+    });
+
+    gulp.watch("app/sass/*.scss", ['sass3']).on('change', browserSync.reload);
+    gulp.watch("*.html").on('change', browserSync.reload);
 });
- 
-gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('sass3', function() {
+    return gulp.src("app/sass/*.scss")
+        .pipe(sass())
+        .pipe(prefix('last 2 versions'))
+        .pipe(minify())
+        .pipe(gulp.dest("app/css"))
+        .pipe(browserSync.stream());
 });
+
+gulp.task('default', ['serve']);
