@@ -34,11 +34,11 @@ var pointProt = (function() {
     };
 
     pointProt.prototype.getPrototypeName = function() {
-        console.log("prototype");
+        console.log('prototype');
     };
 
     pointProt.prototype.getName = function() {
-        console.log("prototype");
+        console.log('prototype');
     };
 
     return pointProt;
@@ -65,7 +65,7 @@ var rodProp = (function() {
     };
 
     rodProp.prototype.getDeformation = function() {
-        console.log(this.force + " * " + Math.pow(this.lenght, 3) + " / " + this.young + " * " + Math.pow(this.diameter, 4));
+        console.log(this.force + ' * ' + Math.pow(this.lenght, 3) + ' / ' + this.young + ' * ' + Math.pow(this.diameter, 4));
         def = (this.force * Math.pow(this.lenght, 3)) / this.young * (3.14 / 64) * Math.pow(this.diameter, 4);
         return def;
     };
@@ -94,7 +94,7 @@ var rodSquare = (function() {
     };
 
     rodSquare.prototype.getDeformation = function() {
-        console.log(this.force + " * " + Math.pow(this.lenght, 3) + " / " + this.young + " * " + Math.pow(this.diameter, 4));
+        console.log(this.force + ' * ' + Math.pow(this.lenght, 3) + " / " + this.young + " * " + Math.pow(this.diameter, 4));
         def = (this.force * Math.pow(this.lenght, 3)) / this.young * ((this.diameter * Math.pow(this.height, 3)) / 12);
         return def;
     };

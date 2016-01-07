@@ -10,11 +10,11 @@ var modulePoint = (function() {
         };
 
         me.getFunctionName = function() {
-            console.log("functional pattern");
+            console.log('functional pattern');
         };
 
         me.getName = function() {
-            console.log("functional pattern");
+            console.log('functional pattern');
         };
 
         me.getLenght = function() {

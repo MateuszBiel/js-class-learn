@@ -1,29 +1,29 @@
-var checkedOption = "prototype";
+var checkedOption = 'prototype';
 var instance = new rodProp();
-var barType = "";
+var barType = '';
 
 function setCheckedOption() {
-    "use strict";
+    'use strict';
     return function() {
         checkedOption = this.value;
     };
 }
 
 function setCalculate() {
-    "use strict";
+    'use strict';
     return function() {
         barType = this.value;
         displayCalculate(this.value);
     };
 }
 
-var radios = document.forms["pattern-checker"].pattern;
+var radios = document.forms['pattern-checker'].pattern;
 for (var i = 0, max = radios.length; i < max; i++) {
-    radios[i].addEventListener("click", setCheckedOption());
+    radios[i].addEventListener('click', setCheckedOption());
 }
-var radios = document.forms["menu-algorythm"].figure;
+var radios = document.forms['menu-algorythm'].figure;
 for (var i = 0, max = radios.length; i < max; i++) {
-    radios[i].addEventListener("click", setCalculate());
+    radios[i].addEventListener('click', setCalculate());
 }
 
 function setCurrentFigureName(name) {
@@ -40,23 +40,23 @@ function displayElementsBloc(name, type) {
 }
 
 function displayCalculate(name) {
-    // $('#values').find("input[type=number], textarea").val("");
+    // $('#values').find('input[type=number], textarea').val(');
     clearFormData();
 
-    displayElementsBloc("square-bar", "none");
-    displayElementsBloc("T-bar", "none");
+    displayElementsBloc('square-bar', 'none');
+    displayElementsBloc('T-bar', 'none');
     changeDiameterToWidth(0);
     switch (name) {
-        case "point":
-            setCurrentFigureName("round bar");
+        case 'point':
+            setCurrentFigureName('round bar');
 
             switch (this.checkedOption) {
-                case "prototype":
+                case 'prototype':
 
                     this.instance = new rodProp();
                     this.instance.getName();
                     break;
-                case "closure":
+                case 'closure':
 
                     this.instance = cClousureBar();
                     this.instance.getName();
@@ -68,14 +68,14 @@ function displayCalculate(name) {
                     break;
             }
             break;
-        case "rect":
-            setCurrentFigureName("square bar");
+        case 'rect':
+            setCurrentFigureName('square bar');
             switch (this.checkedOption) {
-                case "prototype":
+                case 'prototype':
                     this.instance = new rodSquare();
                     this.instance.getName();
                     break;
-                case "closure":
+                case 'closure':
                     this.instance = cClousureSquare();
                     this.instance.getName();
                     break;
@@ -85,18 +85,18 @@ function displayCalculate(name) {
                     break;
             }
 
-            document.getElementsByClassName("square-bar")[0].style.display = 'block';
+            document.getElementsByClassName('square-bar')[0].style.display = 'block';
             changeDiameterToWidth(1);
             break;
-        case "doubleT":
-            setCurrentFigureName("I-beam");
+        case 'doubleT':
+            setCurrentFigureName('I-beam');
 
             switch (this.checkedOption) {
-                case "prototype":
+                case 'prototype':
                     this.instance = new rodSquare();
                     this.instance.getName();
                     break;
-                case "closure":
+                case 'closure':
                     this.instance = cClousureSquare();
                     this.instance.getName();
                     break;
@@ -105,7 +105,7 @@ function displayCalculate(name) {
                     this.instance.getName();
                     break;
             }
-            displayElementsBloc("T-bar", "block");
+            displayElementsBloc('T-bar', 'block');
 
             changeDiameterToWidth(1);
             break;
@@ -115,15 +115,15 @@ function displayCalculate(name) {
 }
 
 function clearFormData() {
-    var x = document.getElementById("values");
+    var x = document.getElementById('values');
     var i;
     for (i = 0; i < x.length; i++) {
-        x.elements[i].value = "";
+        x.elements[i].value = '';
     }
 }
 
 function getDataFromForm() {
-    var x = document.getElementById("values");
+    var x = document.getElementById('values');
     var tmpArray = [];
     var i;
     for (i = 0; i < x.length; i++) {
@@ -138,14 +138,14 @@ function calculateForce() {
     this.instance.setLenght(data.lenght);
     this.instance.setForce(data.force);
     if (data.height) this.instance.setHeight(data.height);
-    if (barType == "doubleT") {
+    if (barType == 'doubleT') {
 
         var decoratorObject = new Decorate(instance, data.heightS, data.diameterS);
 
-        document.getElementById("eq-result").innerHTML = decoratorObject.calculateForce();
+        document.getElementById('eq-result').innerHTML = decoratorObject.calculateForce();
 
     } else {
-        document.getElementById("eq-result").innerHTML = instance.getDeformation();
+        document.getElementById('eq-result').innerHTML = instance.getDeformation();
     }
 
     return data;
@@ -157,9 +157,9 @@ function changeDiameterToWidth(rec) {
     for (var i = 0; i < doc.length; i++) {
         var theText = doc[i].innerHTML;
         if (rec) {
-            theText = theText.replace("diameter", "width");
+            theText = theText.replace('diameter', 'width');
         } else {
-            theText = theText.replace("width", "diameter");
+            theText = theText.replace('width', 'diameter');
         }
         document.getElementsByClassName('diameter-word')[i].innerHTML = theText;
     }

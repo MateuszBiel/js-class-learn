@@ -38,10 +38,10 @@ var cClousurePoint = function() {
                 return young;
             },
             getClousureName: function() {
-                console.log("Clousure pattern");
+                console.log('Clousure pattern');
             },
             getName: function() {
-                console.log("Clousure pattern");
+                console.log('Clousure pattern');
             }
         });
     }
